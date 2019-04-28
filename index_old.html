@@ -1,0 +1,102 @@
+<html>
+<head>
+	<style> 
+		body,html{margin:0px;height:100%;overflow:hidden;}canvas{width:100%;height:100%;}
+	</style>
+	<link rel="stylesheet" href="requirements/css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<div class="login-overlay">
+		<center>
+			<h2 id="status">Server Status: connecting...</h1>
+			<h2 id="spotify-status">Spotify Login: no code provided</h1>
+			<br>
+			<img id="loginSpotImg" src="requirements/img/Spotify-Logo.png">
+			<h1>Login met spotify</h1>
+			<h3>Net ingelogged? Wacht dan even</h3>
+		</center>
+		<script>
+		var scopes ='playlist-read-private user-modify-playback-state user-top-read user-read-recently-played user-read-currently-playing app-remote-control user-read-playback-state user-follow-read user-read-email streaming playlist-read-collaborative'
+		//var scopes = 'user-read-private user-read-email user-modify-playback-state user-top-read user-read-recently-played user-read-currently-playing app-remote-control user-read-playback-state streaming';
+		$(".login-overlay").attr("onclick", "window.location = \"https://accounts.spotify.com/authorize?client_id=d5162d2347b24529ba84521cf1c905ab&response_type=code&redirect_uri=http://"+window.location.hostname+"&scope="+encodeURIComponent(scopes)+"&state=34fFs29kd09\"")
+		</script>
+	</div>
+
+	<div class="myplaylists" id="myplaylists">
+		<label class="fa fa-times" onclick="$('#myplaylists').toggle();"></label>
+		<center>
+		<br /> <br /> <br /> <br /> <br />
+		<div class="myplaylists-playlist" onclick="$('.myplaylists-songlist').slideUp(); $(this).children().first().slideDown()">
+			Laden...
+			<div class="myplaylists-songlist" id="myplaylists-songlist1231231fadfasd">
+				<div class="myplaylists-song">
+					<a>Bob de bouwer</a> - <a> Jantje</a> <input type="submit" value="Toevoegen aan de queue">
+				</div>
+			</div>
+		</div>
+		</center>
+	</div>
+	<div class="queue" id="queue">
+		<input type="submit" class="buttonNoBorder" value="Queue weergave sluiten" onclick="$('#queue').toggle();">
+		<div class="queue-song">
+			<img src="" class="inline queue-song-img">
+			<div class="inline">
+				<div class="queue-song-title">Ebony &amp; Ivory</div>
+				<div class="queue-song-artist">Paul McCartney</div>
+				<div class="queue-song-album">Pop Music: The Modern Era 1976-1999</div>
+				<div class="queue-song-time">3:09</div>
+			</div>
+		</div> 
+	</div>
+	<div class="randomOverlay"></div>
+
+	<div class="cPlaying">
+		<div class="column left">
+			<div class="fa fa-music fonta inline cPlaying-musicnote"></div>
+			<div class="inline" style="max-width: 285px;">
+				<div class="miniplayer" id="cPlaying_miniplayer">
+					<img src="https://i.scdn.co/image/5fd845efa17ab43a8e14125c1845cfa74315f0b6" class="miniplayer-img" id="cPlaying_miniplayer_img"><div class="miniplayer-info" id="cPlaying_miniplayer_info">
+					<div class="miniplayer-info-title" id="cPlaying_miniplayer_info_title">Ebony &amp; Ivory</div>
+					<div class="miniplayer-info-artist" id="cPlaying_miniplayer_info_artist">Paul McCartney</div>
+					<div class="miniplayer-info-album" id="cPlaying_miniplayer_info_album">Pop Music: The Modern Era 1976-1999</div>
+				</div>
+				<div class="miniplayer-progress" id="cPlaying_miniplayer_progress"><div class="miniplayer-progress-bar" id="cPlaying_miniplayer_progress_bar"></div></div>
+				<div class="miniplayer-progress-current" id="cPlaying_miniplayer_progress_current">0:32</div><div class="miniplayer-progress-total" id="cPlaying_miniplayer_progress_total" style="    margin-left: -6px;">3:42</div></div>
+			</div>
+		</div>
+		<div class="column middle">
+			<div class="fa fa-user-friends" id="cPlaying_syncUsername"><!-- fa-users --> Onno van Helfteren</div>
+		</div>
+		<div class="column right">
+			<input type="submit" value="Stop met meeluisteren" onclick="connection.send(JSON.stringify({type:'spot-sync',userid:'Niemand'}));">
+			<input type="submit" value="queue" onclick="showQueue();">
+		</div>
+	</div>
+
+
+	<div class="overview">
+		<div class="users inline">
+		</div>
+		<div class="rooms inline">
+			<input type="text" id="createroomName"><input type="submit" class="buttonNoBorder" value="Room maken" onclick="connection.send(JSON.stringify({type:'room-createroom',data:($('#createroomName').val())}));">
+		</div>
+	</div>
+
+	
+	<div class="buttons">
+		<input type="submit" class="buttonNoBorder" value="Restart Server" onclick="connection.send(JSON.stringify({type:'exit',spotID:'123'})); window.location = window.location;" >
+		<input type="submit" class="buttonNoBorder" value="Settings" onclick="connection.send(JSON.stringify({type:'spot-currentplaying',data:'123'}));">
+		<input type="submit" class="buttonNoBorder" value="Playlists" onclick="$('#myplaylists').toggle();">
+		<input type="submit" class="buttonNoBorder" value="Stop met meeluisteren" onclick="connection.send(JSON.stringify({type:'spot-sync',userid:'Niemand'}));">
+	</div>
+
+	<br><br><br><br><br><br>
+	<div class="otherUsers inline"></div>
+	<script src="requirements/js/theJS.js"></script>
+	<script src="requirements/js/createObjects.js"></script>
+	<script src="requirements/js/albumColors.js"></script>
+	<script src="requirements/js/websocket.js"></script>
+</body>
+</html>

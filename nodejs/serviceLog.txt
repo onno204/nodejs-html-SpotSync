@@ -1,0 +1,7 @@
+Connection closed:  1001
+[0m[[44mincomming[0m][36m::ffff:83.82.67.74[0m: {"type":"spotcode","spotCode":"AQBht2UMGhkpxXj3Cd9bhHLZCGrIfIWXZ3L3cOt_4tEvUk5RqX0XAytweVOTX8SQvnqaRbZmQvUPDUuePv8Cyq8WpXup8l4ORN3_kvnvI6stZsa1J-WqDVm2QuVx3Nbx40KjtPFnwv87seQP81lufz2oOQuzkiziVpU48UE3JmxrubW-xr482GlpToxCxIH905C1TJUXz4hx7tnO-kQ5xrEJ1tWfEseQ0wuNuxWQmccmpoT9qylP-gbmhRRKTsRzlO96qdKLgkXIZu5mFZFgqGH8HsYn48QjVq5RxVn3pFNdJIWZK1YL6adhN2cJvrS32QYQjzTnIZo_O00JbAO-CMVi5uS340Yw5QgSY8jeiFKQFQc9nK0apRfv-51R3G6gnQ2Qm1GKXLfMQRqzqbtZ6WZji7SpFXy1TmfqiCNDfoc-5J4z9N9mS4cY9pDiWpK2AWT90cByL4ix6tIUGS4N5gIF_t96d3wugSQ-QB8IasNGg3TGghfIit0wR9RPoD21Nwf8EZg"}
+[0m[[45moutgoing[0m][36m::ffff:83.82.67.74[0m: {"type":"log","data":"Setting up user..."}
+refreshing token for user:  Null
+Saving:  {"miliseconds_correction_range":1000,"token":"AQC6IXr4a8HWRY6icZVXf6KDDS0wE3kgklosZebhQp3JRP8nejj7TBqtQFAEoo8CTHpcFIqzCHk8VcZdggWQ7gV1s0Y6VM9eiHi-t0K4ar9Mnb-5YL8ITFF_KnxEYbED6N1_Bw","username":"Onno van Helfteren"}
+(node:14016) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): WebapiError: Not Found
+(node:14016) DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.

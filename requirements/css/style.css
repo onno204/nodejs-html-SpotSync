@@ -1,0 +1,334 @@
+body{ 
+	font-family: "Arial"; 
+	overflow-y: auto; 
+	background-color: rgba(47,44,44,1)
+}
+.inline{ display: inline-block; }
+
+.fonta{	margin: 10px 0px !important; }
+a:link{	color: inherit; }
+a:visited{ color: inherit; }
+.randomOverlay{ display: none; position: fixed; z-index: 2; }
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from { transform:rotate(0deg);
+    }to { transform:rotate(360deg); }
+}
+
+
+.buttons{
+	position: fixed;
+	z-index: 1000;
+	bottom: 0px;
+}
+.options-room{
+	color: white;
+	text-align: center;
+	margin-top: 14%;
+	font-size: 150%;
+}
+.options-room div{
+	cursor: pointer;
+	margin-right: 10%;
+} 
+
+
+
+
+/* Playlists */
+.myplaylists label{
+	position: absolute;
+    top: 3vw;
+    right: 3vw;
+    width: 4vw;
+    height: 4vw;
+    cursor: pointer;
+    font-size: 4vw;
+    color: red;
+}
+.myplaylists{
+	width: 100vw;
+	height: 80vh;
+	overflow: hidden;
+	background-color: rgba(25,20,20,0.9);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	align-content: center;
+	color: rgba(26,178,107,1);
+	display: none;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: 300%;
+	padding-top: 10vh;
+	padding-bottom: 10vh;
+	z-index: 1;
+}
+.myplaylists-playlist{
+	font-size: xx-large;
+	text-decoration: underline;
+    cursor: pointer;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-left: 17vw;
+	padding-left: 0.2vw;
+	border-left-style: dotted;
+}
+.myplaylists-songlist{
+	display: none;
+	overflow-y: auto;
+	text-decoration: none;
+	font-size: large;
+    cursor: default;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-size: initial;
+	margin-left: 2.5vw;
+	padding-left: 0.5vw;
+	border-left-style: solid;
+}
+.myplaylists-song{
+	text-decoration: none;
+}
+.myplaylists-song a{
+    cursor: pointer;
+}
+
+
+
+
+input[type="submit"]{
+    height:25px;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+	border-radius: 0px;
+	border-style: none;
+    margin-left: 0.1vw;
+    padding: 0.1vw;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+}
+.buttonNoBorder{
+	border-style: none !important;
+	margin: 0;
+}
+
+.login-overlay{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.9);
+	position: fixed;
+	z-index: 1000;
+	top: 0px;
+	left: 0px;
+	align-content: center;
+	color: rgba(26,178,107,1)
+}
+.login-overlay img{
+	width: 50vw;
+	margin: auto;
+	margin-top: 30vh;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+
+/* Currently Playing */
+.cPlaying .column { float: left; height: inherit; background: inherit; }
+.cPlaying .left {	width: 380px; }
+/*.cPlaying .left div div{ 
+    overflow-x: hidden;
+    padding-right: 20px;
+    max-width: 75%;
+}*/
+.cPlaying .middle { width: auto; padding-top: 15px; height: 105px; }
+.cPlaying .right {	width: 20%; padding-top: 15px; padding-right: 15px; height: 105px; float: right; }
+#cPlaying_miniplayer_info_title, #cPlaying_miniplayer_info_artist, #cPlaying_miniplayer_info_album{ font-size: 100%; }
+#cPlaying_miniplayer_progress_total, #cPlaying_miniplayer_progress_current{ font-size: small; }
+.cPlaying{
+	width: 100vw;
+	height: 120px;
+	background-color: rgba(25,20,20,1);
+	color: white;
+}
+.cPlaying-musicnote{
+	background-color: rgba(26,178,107,1);
+	border-radius: 50%;
+	padding: 15px;
+	margin: 25px 10px !important;
+	font-size: 40px;
+}
+
+
+
+
+/* queue */
+.queue{
+	background-color: rgba(75,75,75,1);
+	color: white;
+	position: fixed;
+	margin-right: 30px;
+	margin-top: 30px;
+	padding: 5px;
+	float: right;
+	width: 30vw;
+    right: 30px;
+    top: 120px;
+    z-index: 1;
+    display: none;
+    font-size: 80%;
+    overflow-y: auto;
+    height: 80vh;
+}
+.queue-song{
+	background-color: rgba(175,175,175,1);
+	padding: 8px;
+	margin-bottom: 8px;
+}
+.queue-song-img{
+	width: 59px;
+	height: 59px;
+	margin-right: 5px;
+}
+.queue-song-title{
+    font-size: 120%;
+    font-weight: bolder;
+}
+
+
+
+.overview{
+	color: black;
+}
+
+
+
+/* Rooms */
+.rooms{
+	position: absolute;
+	margin-right: 30px;
+	margin-top: 30px;
+	padding: 5px;
+	float: right;
+	width: 30vw;
+	background-color: rgba(89,89,89,1);
+    overflow-y: auto;
+    height: 80vh;
+}
+.room{
+	background-color: rgba(175,175,175,1);
+	padding: 8px;
+	margin-bottom: 8px;
+}
+
+
+
+
+/* Users */
+.users{
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: 62vw;
+	min-height: 80vh;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+.user{
+	background-color: rgba(89,89,89,1);
+	width: 16vw;
+	height: 8vw;
+	min-width: 230px;
+	min-height: 120px;
+	margin-right: 2vw;
+	margin-bottom: 2vw;
+	padding: 11px;
+	display: inline-block;
+	border-radius: 1%;
+}
+.user-name{
+	margin-bottom: 10px;
+	text-align: center;
+	width: 100%;
+	white-space: nowrap;
+	color: rgba(167,167,167,1);
+}
+
+
+
+
+/* miniplayer */
+.miniplayer{
+	display: grid;
+	width: initial;
+	grid-template-columns: 60px auto auto 20px;
+  	grid-template-areas:
+  	'img info info info'
+  	'img info info info'
+  	'img info info info'
+  	'img info info info'
+  	'img info info info'
+  	'progress progress progress progress'
+  	'currentime none none totaltime';
+  	grid-gap: 10px;
+  	min-width: 230px;
+}
+.miniplayer-img{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	grid-area: img;
+    box-shadow: 0 0 8px 8px white inset;
+}
+.miniplayer-info{
+	color: rgba(205,205,205,1);
+	grid-area: info;
+	overflow: hidden;
+}
+.miniplayer-info-title{	
+	white-space: nowrap; 
+	font-weight: bold;
+	font-size: 80%;
+}
+.miniplayer-info-artist{ 
+	white-space: nowrap; 
+	font-size: 80%;
+}
+.miniplayer-info-album{	
+	white-space: nowrap; 
+	font-size: 80%;
+}
+.miniplayer-progress{
+	width: 100%;
+	background-color: #ddd;
+	margin-top: 10px;
+	grid-area: progress;
+	margin-top: 0px;
+}
+.miniplayer-progress-bar{
+	height: 4px;
+	background-color: #4CAF50;
+	text-align: center;
+	line-height: 30px;
+	color: white;
+	transition: all 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.miniplayer-progress-current{
+	grid-area: currentime;
+    margin-top: -7px;
+    font-size: x-small;
+    color: white;
+}
+.miniplayer-progress-total{
+	grid-area: totaltime;
+    margin-top: -7px;
+    font-size: x-small;
+    color: white;
+}

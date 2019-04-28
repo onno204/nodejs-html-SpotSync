@@ -1,0 +1,24 @@
+{
+  "name": "spotsync204",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "Spotsync created by onno204",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "onno204",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0",
+    "websocket": "^1.0.28",
+    "http": "^0.0.0",
+    "spotify-web-api-node": "^4.0.0"
+  }
+}

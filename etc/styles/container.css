@@ -1,0 +1,315 @@
+.container{
+	width: 94vw;
+	height: 94vh;
+	position: fixed;
+	top: 3vh;
+	left: 3vw;
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-color: rgba(51, 51, 51, 1);
+	color: white;
+}
+
+
+/* Top Player */
+.CPlayer{
+	height: 11vh;
+	background-color: rgba(151, 151, 151, 1);
+	font-size: 2.4vh;
+	color: white;
+	position: relative;
+}
+.CPlayer-img{
+	background: linear-gradient(to right, rgba(151, 151, 151, 0) 0, rgba(151, 151, 151, 0.8) 13vh, rgba(151, 151, 151, 1) 15vh), url(https://i.scdn.co/image/2e7bcfcfee30cd7548843f9028b733b8956f3614) no-repeat;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	height: 11vh;
+	width: 15vh;
+	padding-left: 15vh;
+	box-sizing: border-box;
+	display: inline-block;
+}
+.CPlayer-info{
+	display: inline-block;
+	margin-top: 1vh;
+    margin-left: -0.8vh;
+    width: 30vw;
+    overflow: hidden;
+	vertical-align: top;
+}
+.CPlayer-info > div{
+	overflow: hidden;
+	white-space: nowrap;
+}
+.CPlayer-info-title, .CPlayer-info-artist, .CPlayer-info-album{	display: block; }
+/*.CPlayer-info-title::before{ content: "Titel: "; }
+.CPlayer-info-artist::before{ content: "Artiest: "; }
+.CPlayer-info-album::before{ content: "Album: "; }*/
+.CPlayer-info2-listenswith{	padding-left: 0.1vh; }
+.CPlayer-info2{
+	display: inline-block;    
+	vertical-align: top;
+	margin-top: 1vh;
+}
+.CPlayer-progress{
+	width: 100%;
+	position: absolute;
+	background-color: #ddd;
+	bottom: 0px;
+	left: 0px;
+	height: 4px;
+}
+.CPlayer-progress-bar{
+	height: inherit;
+	background-color: #4CAF50;
+	transition: all 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+.CPlayer-overlay{
+	text-align: center;
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: block;
+	width: 100%;
+	height: 9vh;
+    padding-top: 2vh;
+	color: rgba(26,178,107,0);
+	background-color: rgba(0,0,0,0);
+	transition-duration: 0.3s;
+	font-size: 300%;
+}
+.CPlayer-overlay div{
+	cursor: pointer;
+}
+.CPlayer-overlay:hover{
+	transition-duration: 0.3s;
+	color: rgba(26,178,107,1);
+	background-color: rgba(0,0,0,0.8);
+}
+
+
+/* Slider */
+.sliderdot {
+	height: 9px;
+	width: 9px;
+	background-color: #bbb;
+	display: inline-block;
+	border-radius: 50%;
+	transition-duration: 0.5s;
+	cursor: pointer;
+}
+.sliderdot-selected{
+	background-color: rgba(26,178,107,1);
+	cursor: default;
+}
+.sliderStatus{
+	position: absolute;
+	text-align: center;
+    width: inherit;
+    z-index: 2;
+}
+
+.slider{
+	height: 83vh;
+	width: 940vw;
+	overflow: auto;
+}
+
+.slider > div{
+	height: 83vh;
+	width: 91vw;
+	padding: 1.5vw;
+	padding-top: 3vw;
+	overflow: auto;
+	display: inline-block;
+	transition-duration: 1s;
+}
+
+/* User */
+.user{
+	background-color: rgba(89,89,89,1);
+	width: 96%;
+	height: 160px;
+	margin-right: 1vw;
+	margin-bottom: 2vw;
+	padding: 2%;
+	display: inline-block;
+	position: relative;
+	font-size: 200%;
+	overflow: hidden;
+}
+.user-username{
+	text-align: center;
+}
+.user-albumimg{
+	background: linear-gradient(to left, rgba(89, 89, 89, 0) 0, rgba(89, 89, 89, 0.4) 40%, rgba(89, 89, 89, 1) 100%), url(https://i.scdn.co/image/2e7bcfcfee30cd7548843f9028b733b8956f3614) no-repeat;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	width: 130px;
+	height: 130px;
+	padding-left: 3vw;
+	box-sizing: border-box;
+	right: 0px;
+	bottom: 0vw;
+	position: absolute;
+}
+.user-info > div{
+	overflow: hidden;
+	white-space: nowrap;
+}
+.user-info{
+	width: 220px;
+	overflow: hidden;
+    width: calc(100% - 130px);
+}
+.user-overlay{
+	text-align: center;
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: block;
+	width: 100%;
+	height: 73%;
+    padding-top: 8%;
+	color: rgba(26,178,107,0);
+	background-color: rgba(0,0,0,0);
+	transition-duration: 0.3s;
+	font-size: 300%;
+}
+.user-overlay div{
+	cursor: pointer;
+}
+.user-overlay:hover{
+	transition-duration: 0.3s;
+	color: rgba(26,178,107,1);
+	background-color: rgba(0,0,0,0.8);
+}
+@media only screen and (min-width: 1025px) {
+	.user{
+		width: 370px;
+		height: 90px;
+		font-size: 100%;
+		padding: 1%;
+	}
+	.user-info{
+		    width: calc(100% - 80px);
+	}
+	.user-albumimg{
+		width: 80px;
+		height: 80px;
+	}
+	.user-overlay{
+   		padding-top: 12%;
+		height: 60%;
+		font-size: 200%
+	}
+} 
+
+/* Universal */
+.song-progress{
+	width: 100%;
+	position: absolute;
+	background-color: #ddd;
+	height: 2px;
+	bottom: 0px;
+	left: 0px;
+}
+.song-progress-bar{
+	height: inherit;
+	background-color: #4CAF50;
+	transition: all 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+
+
+
+
+/* Rooms */
+.room{
+	background-color: rgba(89,89,89,1);
+	width: calc(100% - 6vw - 11px);
+	height: 320px;
+	margin-left: 2vw;
+	margin-top: 2vw;
+	padding: 11px;
+	display: block;
+	position: relative;
+	font-size: 200%;
+    overflow: auto;
+}
+.room-roomname{
+	text-align: center;
+	font-size: 120%;
+	font-weight: bold;
+}
+.room-info{
+	width: 240px;
+	overflow: hidden;
+	height: 70%;
+	border-right-style: solid;
+	border-color: white;
+	border-width: 1px;
+}
+.room-albumimg{
+	background: linear-gradient(to right, rgba(89, 89, 89, 0) 0, rgba(89, 89, 89, 0.4) 40%, rgba(89, 89, 89, 1) 100%), url(https://i.scdn.co/image/2e7bcfcfee30cd7548843f9028b733b8956f3614) no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	box-sizing: border-box;
+	left: 0px;
+	bottom: 0vw;
+	position: absolute;
+	width: 140px;
+	height: 140px;
+}
+.room-users{
+    column-count: 1;
+    column-gap: 50px;
+}
+.room-users li{
+	list-style-type: none;
+}
+.room-overlay{
+	text-align: center;
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: block;
+	width: 100%;
+	color: rgba(26,178,107,0);
+	background-color: rgba(0,0,0,0);
+	transition-duration: 0.3s;
+	font-size: 300%;
+	height: 70%;
+    padding-top: 12%;
+}
+.room-overlay div{
+	cursor: pointer;
+}
+.room-overlay:hover{
+	transition-duration: 0.3s;
+	color: rgba(26,178,107,1);
+	background-color: rgba(0,0,0,0.8);
+}
+@media only screen and (min-width: 1025px) {
+	.room{
+		font-size: 100%;
+		height: 160px;
+	}
+	.room-albumimg{
+		width: 80px;
+		height: 80px;
+	}
+	.room-users{
+	    column-count: 4;
+	}
+	.room-overlay{
+		height: 60%;
+	    padding-top: 6%;
+	}
+}
