@@ -1,6 +1,6 @@
 # SpotSync
 
-_ NOTE: This was usefull before spotify introduced 'jams'(aka listen together). Using this app is was possible to listen together to the same song and sync play progress _
+*NOTE: This was usefull before spotify introduced 'jams'(aka listen together). Using this app is was possible to listen together to the same song and sync play progress*
 
 How it works:
 
